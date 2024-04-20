@@ -26,7 +26,7 @@ def get_num_of_words(text: str) -> int:
     words = text.split()
     return len(words)
 
-def get_chars_dict(text: str) -> dict:
+def get_chars_dict(text: str) -> dict[str, str]:
     lowered_text = text.lower()
     letter_count_dict = {}
 
@@ -38,7 +38,7 @@ def get_chars_dict(text: str) -> dict:
     
     return letter_count_dict
 
-def form_a_book_report(num_of_words: int, letters_count: dict):
+def form_a_book_report(num_of_words: int, letters_count: dict[str, str]):
     sorted_dic = dict(sorted(letters_count.items()))
 
     print(f"--- Begin report of {PATH_TO_BOOKS}/{PATH_TO_FILE} ---")
