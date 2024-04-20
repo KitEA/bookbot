@@ -1,4 +1,4 @@
-import os
+import os, re
 
 PATH_TO_BOOKS = "books"
 PATH_TO_FILE = "frankenstein.txt"
@@ -9,8 +9,7 @@ def main():
     num_of_words = get_num_of_words(book_text)
     letters_count = get_chars_dict(book_text)
     
-    print(f"{num_of_words} words found in the document")
-    print(letters_count)
+    form_a_book_report(num_of_words, letters_count)
 
 def construct_path() -> str:
     script_dir = os.path.dirname(__file__)
@@ -38,5 +37,18 @@ def get_chars_dict(text: str) -> dict:
             letter_count_dict[char] = 1
     
     return letter_count_dict
+
+def form_a_book_report(num_of_words: int, letters_count: dict):
+    sorted_dic = dict(sorted(letters_count.items()))
+
+    print(f"--- Begin report of {PATH_TO_BOOKS}/{PATH_TO_FILE} ---")
+    print(f"{num_of_words} words found in the document\n")
+
+    for k, v in sorted_dic.items():
+        if not k.isalpha():
+            continue
+        print(f"The '{k}' character was found {v} times")
+
+    print("--- End report ---")
 
 main()
