@@ -1,1 +1,1 @@
-First Python project
+This script gets a book from subdirectory and count words and chars occurences to form a report
