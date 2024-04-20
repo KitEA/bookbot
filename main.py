@@ -1,4 +1,4 @@
-import os, re
+import os
 
 PATH_TO_BOOKS = "books"
 PATH_TO_FILE = "frankenstein.txt"
